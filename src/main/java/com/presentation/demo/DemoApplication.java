@@ -25,7 +25,7 @@ public class DemoApplication {
 		config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,"192.168.56.101:9092");
 		config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
 		config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class.getName());
-		config.put("schema.registry.url","192.168.56.101:8081" );
+		config.put("schema.registry.url","http://192.168.56.101:8081" );
 		return new DefaultKafkaProducerFactory(config);
 	}
 

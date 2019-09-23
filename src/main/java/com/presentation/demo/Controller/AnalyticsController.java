@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AnalyticsController {
 
-    private final String topic = "eventUser";
+    private final String topic = "events";
 
     @Autowired
     private KafkaTemplate <String, Event> kafkaTemplate;
 
     @GetMapping("/analytics")
     @ResponseBody
-    public Event productDetail( @RequestParam(required = true) String type,
+    public String productDetail( @RequestParam(required = true) String type,
                                 @RequestParam(required = true) String source,
                                 @RequestParam(required = true) String userId,
                                 @RequestParam(required = true) String dateEvent,
@@ -27,6 +27,6 @@ public class AnalyticsController {
 
         Event event = new Event(type, source, userId, dateEvent, productId);
         kafkaTemplate.send(topic,event);
-        return event;
+        return "le message est bien envoyé";
     }
 }
