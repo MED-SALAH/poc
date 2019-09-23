@@ -1,0 +1,26 @@
+{
+    "type": "record",
+    "name": "Event",
+    "namespace": "com.presentation.demo.model",
+    "fields": [
+    {
+        "name": "type",
+        "type": "string"
+    },
+    {
+        "name": "source",
+        "type": "string"
+    },
+    {
+        "name": "userId",
+        "type": "string"
+    }
+    ,{
+         "name": "dateEvent",
+         "type": "string"
+     },
+     {
+          "name": "productId",
+          "type": "string"
+      }]
+}
