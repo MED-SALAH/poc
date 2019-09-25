@@ -2,12 +2,12 @@ package com.presentation.demo;
 
 import java.io.Serializable;
 
-public class Reponse implements Serializable {
+public class Response implements Serializable {
 
     private  int code;
     private String message;
 
-    public Reponse() {
+    public Response() {
 
     }
 
