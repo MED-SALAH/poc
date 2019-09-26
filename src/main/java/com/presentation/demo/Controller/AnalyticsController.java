@@ -2,10 +2,15 @@ package com.presentation.demo.Controller;
 
 
 import com.presentation.demo.Response;
+import com.presentation.demo.model.Description;
 import com.presentation.demo.model.Event;
+import com.presentation.demo.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @CrossOrigin
 @RestController
@@ -25,11 +30,27 @@ public class AnalyticsController {
                                   @RequestParam(required = false) String productId){
 
         Event event = new Event(type, source, userId, dateEvent, productId);
-        kafkaTemplate.send(topic,event);
+        //kafkaTemplate.send(topic,event);
         Response rep=new Response();
         rep.setCode(100);
         rep.setMessage("Le message a été bien reçu");
         return rep ;
+    }
+    @GetMapping("/")
+    @ResponseBody
+    public List<Product> listProduct(){
+        //kafkaTemplate.send(topic,event);
+        Description d1 = new Description("1200","2019","2");
+
+        List l = new ArrayList<Product>();
+
+        l.add(new Product("123","samsung","https://csmobiles.com/15739-large_default/samsung-galaxy-s10-g973f-512go-dual-sim-bleu.jpg",d1));
+
+        l.add(new Product("124","iphone","https://static.fnac-static.com/multimedia/Images/FR/MDM/5f/b2/bd/12431967/1540-1/tsp20190913170846/Apple-iPhone-11-128-Go-6-1-Mauve.jpg",d1));
+
+        l.add(new Product("123","samsung","https://csmobiles.com/15739-large_default/samsung-galaxy-s10-g973f-512go-dual-sim-bleu.jpg",d1));
+
+        return l;
     }
 
 
