@@ -5,10 +5,10 @@ FROM openjdk:8-jdk-alpine as build
 WORKDIR /app
 
 # Copy maven executable to the image
-COPY ../mvnw .
+COPY ./mvnw .
 
 # Copy the pom.xml file
-COPY ../pom.xml .
+COPY ./pom.xml .
 
 # Build all the dependencies in preparation to go offline.
 # This is a separate step so the dependencies will be cached unless
