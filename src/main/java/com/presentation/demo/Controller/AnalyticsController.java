@@ -5,6 +5,7 @@ import com.presentation.demo.Response;
 import com.presentation.demo.model.Description;
 import com.presentation.demo.model.Event;
 import com.presentation.demo.model.Product;
+import org.apache.avro.data.Json;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,7 @@ import java.util.List;
 public class AnalyticsController {
 
     private final String topic = "events";
+    private List<Product> l = new ArrayList<Product>();
 
     @Autowired
     private KafkaTemplate <String, Event> kafkaTemplate;
@@ -42,8 +44,6 @@ public class AnalyticsController {
         //kafkaTemplate.send(topic,event);
         Description d1 = new Description("1200","2019","2");
 
-        List l = new ArrayList<Product>();
-
         l.add(new Product("123","samsung","https://csmobiles.com/15739-large_default/samsung-galaxy-s10-g973f-512go-dual-sim-bleu.jpg",d1));
 
         l.add(new Product("124","iphone","https://static.fnac-static.com/multimedia/Images/FR/MDM/5f/b2/bd/12431967/1540-1/tsp20190913170846/Apple-iPhone-11-128-Go-6-1-Mauve.jpg",d1));
@@ -51,6 +51,11 @@ public class AnalyticsController {
         l.add(new Product("123","samsung","https://csmobiles.com/15739-large_default/samsung-galaxy-s10-g973f-512go-dual-sim-bleu.jpg",d1));
 
         return l;
+    }
+    @RequestMapping(value = "/product", method = RequestMethod.POST)
+    public String newEmployee(@RequestBody String newProduct) {
+        System.out.println(Json.parseJson(newProduct));
+        return newProduct;
     }
 
 
