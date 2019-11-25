@@ -15,7 +15,6 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api")
 public class AnalyticsController {
 
     private final String topic = "events";
@@ -24,7 +23,7 @@ public class AnalyticsController {
     @Autowired
     private KafkaTemplate <String, Event> kafkaTemplate;
 
-    @GetMapping("/analytics")
+    @GetMapping("/api/analytics")
     @ResponseBody
     public Response productDetail(@RequestParam(required = true) String type,
                                   @RequestParam(required = true) String source,
@@ -39,7 +38,7 @@ public class AnalyticsController {
         rep.setMessage("Le message a été bien reçu");
         return rep ;
     }
-    @GetMapping("/")
+    @GetMapping("/api/")
     @ResponseBody
     public List<Product> listProduct(){
         //kafkaTemplate.send(topic,event);
@@ -53,7 +52,7 @@ public class AnalyticsController {
 
         return l;
     }
-    @RequestMapping(value = "/product", method = RequestMethod.POST)
+    @RequestMapping(value = "/api/product", method = RequestMethod.POST)
     public String newEmployee(@RequestBody String newProduct) {
         System.out.println(Json.parseJson(newProduct));
         return newProduct;
