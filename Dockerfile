@@ -4,7 +4,7 @@ FROM openjdk:8-jdk-alpine as build
 # Set the current working directory inside the image
 WORKDIR /app
 
-ARG APP_VERSION 0.0
+ARG APP_VERSION
 
 COPY target/demo-${APP_VERSION}.jar .
 #ARG DEPENDENCY=/app/target/dependency
