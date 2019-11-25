@@ -4,9 +4,9 @@ FROM openjdk:8-jdk-alpine as build
 # Set the current working directory inside the image
 WORKDIR /app
 
-ARG APP_VERSION
+ARG APP_VERSION 0.0
 
-COPY target/demo-$APP_VERSION.jar .
+COPY target/demo-${APP_VERSION}.jar .
 #ARG DEPENDENCY=/app/target/dependency
 
 ENTRYPOINT ["java","-jar","/app/demo-0.0.1-SNAPSHOT.jar","com.presentation.demo.DemoApplication"]
