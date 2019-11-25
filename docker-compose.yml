@@ -11,5 +11,5 @@ services:
     ports:
       - "8080:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
     environment:
-      - APP_VERSION: '0.0.1-SNAPSHOT'
+      - APP_VERSION=0.0.1-SNAPSHOT
     restart: always
