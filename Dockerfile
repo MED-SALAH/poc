@@ -7,7 +7,7 @@ WORKDIR /app
 COPY target/demo-0.0.1-SNAPSHOT.jar demo.jar
 ARG DEPENDENCY=/app/target/dependency
 
-ENTRYPOINT ["java","-jar","app:app/demo.jar","com.presentation.demo.DemoApplication"]
+ENTRYPOINT ["java","-jar","demo.jar","com.presentation.demo.DemoApplication"]
 
 #java -cp lib/* com.presentation.demo.DemoApplication
 #java -jar ////my.jar com.presentation.demo.DemoApplication
