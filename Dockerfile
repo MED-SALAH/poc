@@ -5,7 +5,7 @@ FROM openjdk:8-jdk-alpine as build
 WORKDIR /app
 
 COPY target/demo-0.0.1-SNAPSHOT.jar demo.jar
-ARG DEPENDENCY=/app/target/dependency
+#ARG DEPENDENCY=/app/target/dependency
 
 ENTRYPOINT ["java","-jar","demo.jar","com.presentation.demo.DemoApplication"]
 
