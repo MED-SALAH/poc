@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin
-@RestController
+@RestController(value = "api")
 public class AnalyticsController {
 
     private final String topic = "events";
