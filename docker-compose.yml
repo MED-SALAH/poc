@@ -14,7 +14,7 @@ services:
       - "8080:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
     restart: always
     depends_on:
-      - backend
+      - backend_docker
      # - frontend
 
 #  # Frontend Service
