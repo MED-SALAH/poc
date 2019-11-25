@@ -5,7 +5,7 @@ version: '2'
 # Define services
 services:
   # App backend service
-  app-server:
+  app-server1:
     # Configuration for building the docker image for the backend service
     build:
       context: .
@@ -13,5 +13,32 @@ services:
         APP_VERSION: "0.0.1-SNAPSHOT"
     ports:
       - "8080:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
+    environments:
+      - SERVER_ID=S1
+    restart: always
 
+
+  app-server2:
+    # Configuration for building the docker image for the backend service
+    build:
+      context: .
+      args:
+        APP_VERSION: "0.0.1-SNAPSHOT"
+    ports:
+      - "8081:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
+    environments:
+      - SERVER_ID=S2
+    restart: always
+
+
+  app-server3:
+    # Configuration for building the docker image for the backend service
+    build:
+      context: .
+      args:
+        APP_VERSION: "0.0.1-SNAPSHOT"
+    ports:
+      - "8082:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
+    environments:
+      - SERVER_ID=S3
     restart: always

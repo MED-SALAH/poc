@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin
 @RestController
@@ -52,6 +53,21 @@ public class AnalyticsController {
 
         return l;
     }
+
+
+    @GetMapping("/api/who")
+    @ResponseBody
+    public String who(){
+
+        Map<String, String> env = System.getenv();
+
+        String serverId = env.get("SERVER_ID");
+        return "Current Server is :"+serverId;
+    }
+
+
+
+
     @RequestMapping(value = "/api/product", method = RequestMethod.POST)
     public String newEmployee(@RequestBody String newProduct) {
         System.out.println(Json.parseJson(newProduct));
