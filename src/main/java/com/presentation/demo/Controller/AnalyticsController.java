@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin
 @RestController
@@ -23,7 +24,7 @@ public class AnalyticsController {
     @Autowired
     private KafkaTemplate <String, Event> kafkaTemplate;
 
-    @GetMapping("/analytics")
+    @GetMapping("/api/analytics")
     @ResponseBody
     public Response productDetail(@RequestParam(required = true) String type,
                                   @RequestParam(required = true) String source,
@@ -38,7 +39,7 @@ public class AnalyticsController {
         rep.setMessage("Le message a été bien reçu");
         return rep ;
     }
-    @GetMapping("/")
+    @GetMapping("/api/")
     @ResponseBody
     public List<Product> listProduct(){
         //kafkaTemplate.send(topic,event);
@@ -52,7 +53,22 @@ public class AnalyticsController {
 
         return l;
     }
-    @RequestMapping(value = "/product", method = RequestMethod.POST)
+
+
+    @GetMapping("/api/who")
+    @ResponseBody
+    public String who(){
+
+        Map<String, String> env = System.getenv();
+
+        String serverId = env.get("SERVER_ID");
+        return "Current Server is :"+serverId;
+    }
+
+
+
+
+    @RequestMapping(value = "/api/product", method = RequestMethod.POST)
     public String newEmployee(@RequestBody String newProduct) {
         System.out.println(Json.parseJson(newProduct));
         return newProduct;
