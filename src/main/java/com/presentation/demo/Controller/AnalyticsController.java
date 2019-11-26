@@ -36,7 +36,7 @@ public class AnalyticsController {
         //kafkaTemplate.send(topic,event);
         Response rep=new Response();
         rep.setCode(100);
-        rep.setMessage("Le message a été bien reçu");
+        rep.setMessage("Le message a été bien reçu !!");
         return rep ;
     }
     @GetMapping("/api/")
