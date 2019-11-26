@@ -13,8 +13,8 @@ services:
         APP_VERSION: "0.0.1-SNAPSHOT"
     ports:
       - "8080:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
-    environments:
-      - SERVER_ID=S1
+    environment:
+      - SERVER_ID:S1
     restart: always
 
 
@@ -26,8 +26,8 @@ services:
         APP_VERSION: "0.0.1-SNAPSHOT"
     ports:
       - "8081:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
-    environments:
-      - SERVER_ID=S2
+    environment:
+      - SERVER_ID:S2
     restart: always
 
 
@@ -39,6 +39,6 @@ services:
         APP_VERSION: "0.0.1-SNAPSHOT"
     ports:
       - "8082:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
-    environments:
-      - SERVER_ID=S3
+    environment:
+      - SERVER_ID:S3
     restart: always
