@@ -19,7 +19,7 @@ import java.util.Map;
 public class AnalyticsController {
 
     private final String topic = "events";
-    private List<Product> l = new ArrayList<Product>();
+
 
     @Autowired
     private KafkaTemplate <String, Event> kafkaTemplate;
@@ -44,6 +44,8 @@ public class AnalyticsController {
     public List<Product> listProduct(){
         //kafkaTemplate.send(topic,event);
         Description d1 = new Description("1200","2019","2");
+
+        List<Product> l = new ArrayList<Product>();
 
         l.add(new Product("123","samsung","https://csmobiles.com/15739-large_default/samsung-galaxy-s10-g973f-512go-dual-sim-bleu.jpg",d1));
 
