@@ -40,12 +40,12 @@ pipeline {
             }
 
             stage('TEST') {
-                            steps {
-                                sh """
-                                    mvn clean verify
-                                """
-                             }
-                        }
+                steps {
+                    sh """
+                        mvn clean verify
+                    """
+                 }
+            }
 
             stage('INSTALL') {
                 steps {
