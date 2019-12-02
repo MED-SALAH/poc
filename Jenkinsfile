@@ -39,13 +39,22 @@ pipeline {
                 }
             }
 
+            stage('TEST') {
+                            steps {
+                                sh """
+                                    mvn clean verify
+                                """
+                             }
+                        }
+
             stage('INSTALL') {
                 steps {
                     sh """
-                        mvn clean install
+                        mvn clean install -DskipTests
                     """
                  }
             }
+
      }
 
 
