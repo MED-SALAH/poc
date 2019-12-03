@@ -21,6 +21,10 @@
 			<id>confluent</id>
 			<url>https://packages.confluent.io/maven/</url>
 		</repository>
+		<repository>
+			<id>maven-group</id>
+			<url>http://ip-172-31-38-56.eu-west-3.compute.internal:8081/repository/maven-group/</url>
+		</repository>
 	</repositories>
 	<dependencies>
 		<dependency>
@@ -103,7 +107,7 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>nexus-snapshots</id>
-			<url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+			<url>http://ip-172-31-38-56.eu-west-3.compute.internal:8081/repository/maven-snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
