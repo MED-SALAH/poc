@@ -29,28 +29,6 @@ pipeline {
      stages {
 
 
-             stage("REFRESH PARAMS ON FIRST BUILD") {
-                 steps{
-                     script{
-                         echo " env.BUILD_ID ==>${env.BUILD_ID}"
-                         echo " env.BUILD_NUMBER ==>${env.BUILD_NUMBER}"
-                         FIRST_BUILD = env.BUILD_NUMBER != "1"
-                         echo " FIRST_BUILD==>"+FIRST_BUILD
-
-                     }
-
-                 }
-
-             }
-             stage('parametres') {
-                 steps {
-                     script{
-                         ACTION = "${params.ACTION }"
-
-                     }
-                 }
-             }
-
              stage('GET PROJECT ENV') {
                 steps {
                     echo "dir : /${env.JOB_NAME} removed "
