@@ -23,7 +23,7 @@
 		</repository>
 		<repository>
 			<id>maven-group</id>
-			<url>http://ip-172-31-38-56.eu-west-3.compute.internal:8081/repository/maven-group/</url>
+			<url>http://ec2-35-180-58-201.eu-west-3.compute.amazonaws.com:8081/repository/maven-group/</url>
 		</repository>
 	</repositories>
 	<dependencies>
@@ -108,11 +108,11 @@
     <distributionManagement>
         <snapshotRepository>
             <id>nexus-snapshots</id>
-            <url>http://ip-172-31-38-56.eu-west-3.compute.internal:8081/repository/maven-snapshots/</url>
+            <url>http://ec2-35-180-58-201.eu-west-3.compute.amazonaws.com:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
         <repository>
             <id>nexus-releases</id>
-            <url>http://ip-172-31-38-56.eu-west-3.compute.internal:8081/repository/maven-releases/</url>
+            <url>http://ec2-35-180-58-201.eu-west-3.compute.amazonaws.com:8081/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
 
