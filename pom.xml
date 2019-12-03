@@ -23,11 +23,6 @@
 			<id>confluent</id>
 			<url>https://packages.confluent.io/maven/</url>
 		</repository>
-
-		<repository>
-			<id>maven-group</id>
-			<url>http://ip-172-31-38-56.eu-west-3.compute.internal:8081/repository/maven-group/</url>
-		</repository>
 	</repositories>
 
 
