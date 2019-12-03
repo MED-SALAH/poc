@@ -43,7 +43,7 @@ pipeline {
             stage('TEST') {
                 steps {
                     sh """
-                        mvn clean verify
+                        mvn clean
                     """
                  }
             }

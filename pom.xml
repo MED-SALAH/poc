@@ -19,7 +19,7 @@
 	<repositories>
 		<repository>
 			<id>maven-group</id>
-			<url>http://ec2-35-180-58-201.eu-west-3.compute.amazonaws.com:8081/repository/maven-group/</url>
+			<url>http://ec2-35-180-58-201.eu-west-3.compute.amazonaws.com:8081/repository/maven-central/</url>
 		</repository>
 		<repository>
 			<id>confluent</id>
