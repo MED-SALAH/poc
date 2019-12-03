@@ -121,6 +121,10 @@
 	</build>
 
 	<distributionManagement>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<url>http://ip-172-31-38-56.eu-west-3.compute.internal:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
 		<repository>
 			<id>nexus-releases</id>
 			<url>http://ip-172-31-38-56.eu-west-3.compute.internal:8081/repository/maven-releases/</url>
