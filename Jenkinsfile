@@ -23,12 +23,6 @@ pipeline {
               customWorkspace "${env.WORKSPACE}/${env.JOB_NAME}_${env.BUILD_ID}"
         }
       }
-      tools {
-              maven "Maven 3.3.9"
-              jdk "jdk8"
-          }
-
-
 
      stages {
 
