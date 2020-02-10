@@ -40,6 +40,15 @@ pipeline {
                 }
             }
 
+            stage('MVN') {
+                steps {
+                    sh """
+                        export MAVEN_HOME=/opt/maven
+                        export PATH=$PATH:$MAVEN_HOME/bin
+                        mvn --version
+                    """
+                 }
+            }
             stage('TEST') {
                 steps {
                     sh """
