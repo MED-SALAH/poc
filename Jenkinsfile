@@ -23,6 +23,10 @@ pipeline {
               customWorkspace "${env.WORKSPACE}/${env.JOB_NAME}_${env.BUILD_ID}"
         }
       }
+      tools {
+              maven 'Maven 3.3.9'
+              jdk 'jdk8'
+          }
 
 
 
@@ -40,6 +44,14 @@ pipeline {
                 }
             }
 
+            stage ('Initialize') {
+                steps {
+                    sh '''
+                            echo "PATH = ${PATH}"
+                            echo "M2_HOME = ${M2_HOME}"
+                        '''
+                    }
+                 }
             stage('MVN') {
                 steps {
                     sh """
